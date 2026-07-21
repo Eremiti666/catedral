@@ -23,10 +23,10 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Evita rolagens duplas na tela */
+  overflow: hidden;
 }
 
-/* Barra Superior Elegante */
+/* Barra Superior Fixa */
 .topbar {
   height: 65px;
   background-color: var(--bg-header);
@@ -35,7 +35,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 25px;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
@@ -64,10 +64,10 @@ body {
   display: block;
 }
 
-/* Botões de Ação */
+/* Botões de Alternância */
 .topbar-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn-action {
@@ -79,7 +79,7 @@ body {
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  text-decoration: none;
+  cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
@@ -91,31 +91,74 @@ body {
   color: var(--accent-gold);
 }
 
-.btn-action.primary {
+/* Estilo do botão ativo (selecionado) */
+.btn-action.active {
   background-color: var(--accent-gold);
   color: #000;
   border-color: var(--accent-gold);
 }
 
-.btn-action.primary:hover {
-  background-color: var(--accent-gold-hover);
-}
-
-/* Área do PDF em Tela Cheia (Maximizada) */
+/* Layout das Páginas */
 .viewer-layout {
   flex: 1;
   width: 100%;
   height: calc(100vh - 65px);
   padding: 15px;
-  background-color: var(--bg-main);
   display: flex;
   justify-content: center;
 }
 
+/* Esconde todas as páginas por padrão */
+.pdf-page {
+  display: none;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  flex-direction: column;
+}
+
+/* Mostra apenas a página com a classe 'active' */
+.pdf-page.active {
+  display: flex;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 5px;
+}
+
+.section-header h2 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background-color: var(--bg-header);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.btn-download:hover {
+  background-color: var(--accent-gold);
+  color: #000;
+  border-color: var(--accent-gold);
+}
+
 .pdf-wrapper {
   width: 100%;
-  max-width: 1400px; /* Expande o limite de largura */
-  height: 100%;
+  flex: 1;
   background: #1e1e1e;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -130,7 +173,7 @@ body {
 }
 
 /* Responsividade para Celulares */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .topbar {
     padding: 0 15px;
   }
@@ -140,10 +183,6 @@ body {
   }
   
   .btn-action span {
-    display: none; /* Deixa apenas os ícones em telas muito pequenas */
-  }
-  
-  .viewer-layout {
-    padding: 5px;
+    display: none; /* Deixa apenas os ícones em telas pequenas */
   }
 }
