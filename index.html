@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catedral & Sisters — Documentação Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar / Cabeçalho Superior Fixo -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <i class="fa-solid fa-church logo-icon"></i>
+      <div class="brand-text">
+        <h1>CATEDRAL</h1>
+        <span>SAGRADO SILÊNCIO DE LÍDIA & SISTERS</span>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <a href="assets/Catedral SS de Lidia - Sisters.pdf" target="_blank" class="btn-action">
+        <i class="fa-solid fa-up-right-from-square"></i> <span>Expandir</span>
+      </a>
+      <a href="assets/Catedral SS de Lidia - Sisters.pdf" download class="btn-action primary">
+        <i class="fa-solid fa-download"></i> <span>Baixar PDF</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Container Principal focado na Leitura Expandida -->
+  <main class="viewer-layout">
+    <div class="pdf-wrapper">
+      <iframe src="assets/Catedral SS de Lidia - Sisters.pdf#toolbar=1&navpanes=0" title="Documento Oficial Catedral & Sisters">
+        <p>Seu navegador não exibe PDFs diretamente. 
+           <a href="assets/Catedral SS de Lidia - Sisters.pdf" target="_blank">Clique aqui para abrir o PDF.</a>
+        </p>
+      </iframe>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
